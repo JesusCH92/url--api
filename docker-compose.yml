@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+  webserver:
+    container_name: webserver
+    build:
+      context: ./docker/nginx
+      args:
+        UID: 1000
+
+    ports:
+      - 8080:80
+    volumes:
+      - ./public:/app/public
+    networks:
+      - app-network
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    container_name: php-fpm
+    build:
+      context: ./docker/php
+      args:
+        UID: 1000
+
+    volumes:
+      - ./:/app
+      - ./docker/php/xdebug-linux.ini:/usr/local/etc/php/conf.d/xdebug.ini # variables de entorno para xdebug en windows
+      - ~/.ssh/id_rsa:/home/appuser/.ssh/id_rsa
+    environment:
+      XDEBUG_CLIENT_HOST: host.docker.internal  # ip del kernel de docker en windows (funciona tambien en mac)
+      XDEBUG_CLIENT_PORT: 9003
+      PHP_IDE_CONFIG: serverName=DOCKER
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true
