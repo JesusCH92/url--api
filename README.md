@@ -38,7 +38,7 @@ Después de desplegar el proyecto correctamente, debe acceder al siguiente enlac
 
 [`documentación de las API's`](http://localhost:8080/api/doc)
 
-- [ ] Para ejecutar los text(desde dentro del contenedor):
+- [ ] Para ejecutar los test(desde dentro del contenedor):
 
 ```shell
 make testing
