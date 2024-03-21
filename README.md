@@ -24,7 +24,7 @@ docker-compose -p url up -d
 docker exec -it php-fpm bash 
 ```
 
-- [ ] Después de entrar al contenedor de php-fpm, ejecutar:
+- [ ] Después de entrar al contenedor de php-fpm, dentro del contenedor ejecutar:
 
 ```shell
 make deploy
@@ -36,7 +36,7 @@ Después de desplegar el proyecto correctamente, debe acceder al siguiente enlac
 
 [`documentación de las API's`](http://localhost:8080/api/doc)
 
-- [ ] Para ejecutar los text:
+- [ ] Para ejecutar los text(desde dentro del contenedor):
 
 ```shell
 make testing
