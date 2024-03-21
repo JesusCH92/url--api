@@ -3,3 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+# URL
+app_shorts_urls:
+    path: /api/v1/shorts-urls
+    controller: App\Url\Infrastructure\Api\UrlShorterController::shortUrls
+    methods: POST
