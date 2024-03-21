@@ -2,6 +2,8 @@
 
 Stack tecnologico: PHP8.3(Symfony7), Nginx, OpenApi(Documentación)
 
+La estructura de carpetas está basada en una arquitectura de cortes verticales, mientras que el core se ha trabajado con una arquitectura hexagonal
+
 ## Entorno Dockerizado
 
 **Debes tener instalado Docker y Docker Compose en tu equipo.**
